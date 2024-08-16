@@ -5,21 +5,14 @@ import { useState, useEffect } from 'react';
 
 export default function SortDropdown() {
     const dispatch = useDispatch();
-    const { ratingFilter } = useSelector((state: RootState) => state.products);
-    const [selectedOption, setSelectedOption] = useState<string>('Sort by Ratings (1 and above)');
-
-    useEffect(() => {
-        setSelectedOption(`Sort by Ratings (${ratingFilter} and above)`);
-    }, [ratingFilter]);
 
     const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const value = Number(e.target.value);
-        setSelectedOption(e.target.options[e.target.selectedIndex].text);
         dispatch(filterByRating(value));
     };
 
     return (
-        <div className="relative w-auto max-w-xs">
+        <div className="relative w-full max-w-xs">
             <svg className="absolute top-1/2 -translate-y-1/2 left-4 z-10" width="20" height="20"
                 viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -31,11 +24,11 @@ export default function SortDropdown() {
                 onChange={handleSortChange}
                 className="h-12 border border-gray-300 text-gray-900 pl-11 text-base font-normal leading-7 rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white transition-all duration-500 hover:border-gray-400 hover:bg-gray-50 focus-within:bg-gray-50"
             >
-                <option value="5">Sort by Ratings (5)</option>
-                <option value="4">Sort by Ratings (4 and above)</option>
-                <option value="3">Sort by Ratings (3 and above)</option>
-                <option value="2">Sort by Ratings (2 and above)</option>
-                <option value="1">Sort by Ratings (1 and above)</option>
+                <option value="5">Ratings 5</option>
+                <option value="4">Ratings (4 and above)</option>
+                <option value="3">Ratings (3 and above)</option>
+                <option value="2">Ratings (2 and above)</option>
+                <option value="1">Ratings (1 and above)</option>
             </select>
             <svg className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 z-10" width="16" height="16"
                 viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

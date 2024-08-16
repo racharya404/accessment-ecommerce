@@ -26,12 +26,12 @@ export default function SortDropdown() {
     };
 
     return (
-        <div className="relative">
+        <div className="relative w-full">
             <button
                 onClick={toggleDropdown}
-                className="h-12 border border-gray-300 text-gray-900 pl-4 text-base font-normal leading-7 rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white transition-all duration-500 hover:border-gray-400 hover:bg-gray-50"
+                className="h-12 border w-full max-w-xs border-gray-300 text-gray-900 pl-4 text-base font-normal leading-7 rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white transition-all duration-500 hover:border-gray-400 hover:bg-gray-50"
             >
-                Sort and Filter
+                Sort by price
             </button>
             {isOpen && (
                 <div className="absolute z-10 mt-2 w-md bg-white border border-gray-300 rounded-lg shadow-lg">
